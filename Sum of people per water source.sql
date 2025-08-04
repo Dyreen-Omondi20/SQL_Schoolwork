@@ -1,0 +1,6 @@
+SELECT type_of_water_source,
+SUM(number_of_people_served) AS total_number_of_people_served
+FROM md_water_services.water_source
+GROUP BY type_of_water_source
+ORDER BY total_number_of_people_served DESC
+;

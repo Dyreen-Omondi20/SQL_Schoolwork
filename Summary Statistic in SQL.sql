@@ -1,0 +1,15 @@
+SELECT
+Region,
+Sub_region,
+MIN(Pct_managed_drinking_water_services) AS Min_Pct_managed_drinking_water_services,
+MAX(Pct_managed_drinking_water_services) AS Max_Pct_managed_drinking_water_services,
+AVG(Pct_managed_drinking_water_services) AS Avg_Pct_managed_drinking_water_services,
+COUNT(DISTINCT Country_name) AS Number_of_countries,
+SUM(Est_gdp_in_billions) AS Est_Total_gdp_in_billions
+FROM
+united_nations.access_to_basic_services
+WHERE Time_period= 2020
+AND Pct_managed_drinking_water_services < 60
+GROUP BY Region, Sub_region
+ORDER BY Est_Total_gdp_in_billions
+;

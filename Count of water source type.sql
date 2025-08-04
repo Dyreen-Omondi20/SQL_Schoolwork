@@ -1,0 +1,4 @@
+SELECT type_of_water_source,
+COUNT(type_of_water_source) as sum_of_water_source_type
+FROM md_water_services.water_source
+GROUP BY type_of_water_source;
